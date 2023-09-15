@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+  
+{% block title %}Edit Students Records{% endblock title %}
+  
+{% block content %}
+<div class="form-wrap">
+    <form method="POST" class="post-form" action="/update/{{student.id}}">  
+    {% csrf_token %}  
+    <div class="container">   
+        <div class="col-12">  
+            <h3>Update Details</h3>  
+        </div> 
+        <div class="form-label"> 
+            <label>student ID:</label>  
+            <input type="text" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ student.id }}"/>    
+        </div> 
+        <div class="form-label"> 
+            <label>First Name:</label>  
+            <input type="text" class="form-control" name="fname" id="id_fname" required maxlength="100" value="{{ student.fname }}" />  
+        </div> 
+        <div class="form-label"> 
+            <label>Last Name:</label>  
+            <input type="text" class="form-control" name="lname" id="id_lname" required maxlength="100" value="{{ student.lname }}" />  
+        </div> 
+        <div class="form-label"> 
+            <label>Gender:</label>  
+            <select class="form-control" name="gender" id="id_gender">
+                <option value="female" {% if student.gender == "female" %}selected{% endif %}>Female</option>
+                <option value="male" {% if student.gender == "male" %}selected{% endif %}>Male</option>
+                <option value="other" {% if student.gender == "other" %}selected{% endif %}>Other</option>
+            </select>
+        </div> 
+
+        <div class="form-label"> 
+            <label>Address:</label>  
+            <input type="text" class="form-control" name="address" id="address" required maxlength="100" value="{{ student.address }}" />  
+        </div> 
+
+        <div class="form-label"> 
+            <label>Email:</label>  
+            <input type="email" class="form-control" name="email" id="id_email" required maxlength="254" value="{{ student.email }}" />  
+        </div> 
+        <div class="form-label"> 
+            <label>Contact:</label>  
+            <input type="number" class="form-control" name="contact" id="id_contact" required maxlength="15" value="{{ student.contact }}" />  
+        </div> 
+        <div class="form-btn"> 
+            <button type="submit" class="btn btn-success btn-lg">Update</button>  
+        </div> 
+    </div>  
+    </form>  
+{% endblock content %} 

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+  
+{% block title %}Employee Records{% endblock title %}
+  
+{% block content %}
+<div class="table-wrap">
+        <div class="addbtn"><a href="/addnew">Add New Record</a></div>  
+       
+        <table id="myTable" class="display" >
+        <thead>
+            <!-- <th><input type="checkbox" id="checkall" /></th> -->
+            <th>ID No.</th>
+            <th>First Name</th>
+            <th>last Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+        {% for students in student %}  
+            <tr>  
+            <!-- <td><input type="checkbox" class="checkthis" /></td> -->
+            <td>{{ students.id }}</td>  
+            <td>{{ students.fname }}</td>  
+            <td>{{ students.lname }}</td>  
+            <td>{{ students.gender }}</td>  
+            <td>{{ students.address }}</td>  
+            <td>{{ students.email }}</td>  
+            <td>{{ students.contact }}</td>  
+            <td> <a href="/edit/{{ students.id }}" class="btn btn-primary"><i class='bx bx-edit'></i></a>
+            <a href="/delete/{{ students.id }}" class="btn btn-danger"><i class='bx bxs-trash'></i></a></td>  
+            </tr>  
+        {% endfor %} 
+        </tbody>
+        </table>
+    </div>
+{% endblock content %}

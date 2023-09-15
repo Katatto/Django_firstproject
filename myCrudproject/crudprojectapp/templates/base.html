@@ -1,0 +1,114 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>{% block title %}{% endblock %}</title>
+{% load static %}  
+
+<link rel="stylesheet" href="../static/css/index.css">
+
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+
+</head> 
+<body>
+   <!-- Sidebar -->
+<div class="sidebar">
+   <div class="logo-details">
+       <i class="bx bx-scan icon"></i>
+       <div class="logo_name">HC.lts</div>
+       <i class='bx bx-menu' id="btn" ></i>
+   </div>
+   <ul class="nav-list">
+     <li>
+       <a href="index.html">
+         <i class='bx bx-grid-alt'></i>
+         <span class="links_name">Dashboard</span>
+       </a>
+        <span class="tooltip">Dashboard</span>
+     </li>
+     <li>
+      <a href="add.html">
+       <i class='bx bx-user-plus' ></i>
+       <span class="links_name">User</span>
+      </a>
+      <span class="tooltip">User</span>
+    </li>
+    <!-- <li>
+     <a href="contact.html">
+       <i class='bx bx-target-lock'></i>
+               <span class="links_name">Tracking</span>
+     </a>
+     <span class="tooltip">Tracking</span>
+   </li> -->
+   
+    <li>
+      <a href="#">
+        <i class='bx bx-folder' ></i>
+        <span class="links_name">File Manager</span>
+      </a>
+      <span class="tooltip">Files</span>
+    </li>
+    
+    <li>
+      <a href="#">
+        <i class='bx bx-heart' ></i>
+        <span class="links_name">Saved</span>
+      </a>
+      <span class="tooltip">Saved</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li class="profile">
+        <div class="profile-details">
+          <img src="../static/img/profile.jpg" alt="profile">
+          <div class="name_job">
+            <div class="name">Sarang Jupyo</div>
+            <div class="job">Admin</div>
+          </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out" ></i>
+    </li>
+   </ul>
+ </div>
+
+ <!--MAIN CONTENT-->
+ <section class="home-section"> 
+   <div class="text">Dashboard</div>
+   <div class="stable-wrap">
+    <h3>List of Students</h3>
+    {% block content %}{% endblock %} </div>
+   
+
+ </section>
+   
+<!-- <div class="container">
+ <div class="row">
+    <h4 class="color">Django Mysql CRUD (Create Read Update Delete) with Datatables</h4> 
+ </div>
+</div> -->
+ 
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+<script>
+   $(document).ready( function () {
+   $('#myTable').DataTable({ 
+       info: false,
+   });
+   } );
+</script>
+
+<script src="../static/js/main.js"></script>
+</body> 
+</html>
