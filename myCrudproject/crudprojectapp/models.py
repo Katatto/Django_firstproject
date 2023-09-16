@@ -4,7 +4,7 @@ from django.db import models
 class Student(models.Model):  
     fname = models.CharField(max_length=100)  
     lname = models.CharField(max_length=100)
-    gender = models.CharField(max_length=5)  
+    gender = models.CharField(max_length=10, choices=[("Female", "Female"), ("Male", "Male"), ("Other", "Other")], default=None )
     address = models.CharField(max_length=100)
     email = models.EmailField()  
     contact = models.PositiveIntegerField() 
